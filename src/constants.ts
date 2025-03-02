@@ -5,7 +5,4 @@ export const PLUGIN_ID = "fiftyone-britewyn-app"
 
 export enum ROUTES {
   One = 'one',
-  Two = 'two',
-  Three = 'three',
-  Four = 'four',
 }

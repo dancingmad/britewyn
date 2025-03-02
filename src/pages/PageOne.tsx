@@ -128,8 +128,8 @@ function PageOne() {
     // @ts-ignore
     return <PluginPage>
         <div data-testid={testIds.pageOne.container}>
-            Welcome to the Payment AI. Please ask your question below and press Go.
-            You can change the type of panel to display the result data.
+            Welcome to the Britewyn Datasource AI. Please ask your question below and press Go.
+            You can change the type of panel to display the result data and inspect the Query to verify it is correct.
             <FieldSet label="Ask Me Anything">
                 <Collapse label="(optional) API" isOpen={apiKeyToggle} onToggle={() => setApiKeyToggle(!apiKeyToggle)}>
                     <Field label="API Key">
