@@ -129,8 +129,9 @@ function PageOne() {
         if (apiKey) {
             console.log(`Asking the question ${question} via ${apiURL}`);
             askGPTForAQuery(apiKey, apiURL, question, settings.data_model, settings.data_schema, settings.context).then((result) => {
+                setPanelOptions(null);
                 setQueryProcessing(false);
-                setQuery(result.data);
+                setQuery(result.data);            
             }).catch((error) => {
                 console.error(error);
             }).finally(() => setQueryProcessing(false))
