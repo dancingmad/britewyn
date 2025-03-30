@@ -7,8 +7,8 @@ apps:
     disabled: false
     jsonData:
       apiUrl: https://api.openai.com/v1/chat/completions
-      datasource: xxx
-      db_schema: [{ "field":"countries", "values": ["SE","DK","UK"]}]
-      db_model: [{ "table": "transactions", "type": "view", "columns": [{"name":"created", "type": "timestamp"}]]
+      datasource: 
+      db_schema: 
+      db_model: 
     secureJsonData:
       apiKey: secret-key

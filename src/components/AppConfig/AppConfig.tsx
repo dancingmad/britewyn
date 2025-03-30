@@ -5,7 +5,7 @@ import {AppPluginMeta, GrafanaTheme2, PluginConfigPageProps, PluginMeta, Selecta
 import { getBackendSrv } from '@grafana/runtime';
 import {Button, Field, FieldSet, Input, SecretInput, Select, TextArea, useStyles2} from '@grafana/ui';
 import { testIds } from '../testIds';
-
+import { Datasource, emptyDatasource, fetchDataSources } from '../../utils/config';
 type AppPluginSettings = {
   apiUrl?: string;
   db_schema?: string;
@@ -26,13 +26,6 @@ type State = {
   datasource: string;
   context: string;
 };
-
-export type Datasource = {
-   name: string;
-   type: string;
-   uid: string;
-}
-const emptyDatasource: Datasource = {name: 'none', type:'none', uid: ''}
 
 
 export type ModelColumn = {
@@ -70,15 +63,6 @@ export type Context = {
 export interface AppConfigProps extends PluginConfigPageProps<AppPluginMeta<AppPluginSettings>> {}
 
 
-const fetchDataSources = (setDatasources: { (value: React.SetStateAction<Datasource[]>): void; (arg0: Datasource[]): void; }) => {
-  return getBackendSrv().get('/api/datasources').then((response) => {
-    const updatedDatasources: Datasource[] = [];
-    response.forEach((dsentry: any) => {
-       updatedDatasources.push({name: dsentry.name, type: dsentry.typeName, uid: dsentry.uid})
-    })
-    setDatasources(updatedDatasources);
-  })
-}
 
 const AppConfig = ({ plugin }: AppConfigProps) => {
   const s = useStyles2(getStyles);

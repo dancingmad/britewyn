@@ -23,7 +23,7 @@
     {
       "type": "page",
       "name": "Page One",
-      "path": "/a/%PLUGIN_ID%/one",
+      "path": "/a/fiftyone-britewyn-app/one",
       "addToNav": true,
       "defaultNav": true
     },
@@ -31,13 +31,13 @@
       "type": "page",
       "icon": "cog",
       "name": "Configuration",
-      "path": "/plugins/%PLUGIN_ID%",
+      "path": "/plugins/fiftyone-britewyn-app",
       "role": "Admin",
       "addToNav": true
     }
   ],
   "dependencies": {
-    "grafanaDependency": ">=10.4.0",
+    "grafanaDependency": ">=11.5.2",
     "plugins": []
   }
 }

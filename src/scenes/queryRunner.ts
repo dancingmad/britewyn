@@ -1,6 +1,6 @@
 import { SceneQueryRunner } from '@grafana/scenes';
 
-export const queryRunner = (rawSQL: string, datasource: string) => {
+export const queryRunner = (rawSQL: string, datasource: string, format: string = "table") => {
     return new SceneQueryRunner({
         datasource: {
             type: "grafana-postgresql-datasource",
@@ -10,7 +10,7 @@ export const queryRunner = (rawSQL: string, datasource: string) => {
             {
                 refId: 'A',
                 editorMode: "code",
-                format: "table",
+                format: format,
                 rawQuery: true,
                 rawSql: rawSQL,
             },

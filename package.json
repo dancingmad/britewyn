@@ -67,16 +67,16 @@
   },
   "dependencies": {
     "@emotion/css": "11.10.6",
-    "@grafana/data": "^11.3.2",
-    "@grafana/runtime": "^11.3.2",
-    "@grafana/scenes": "^6.1.0",
+    "@grafana/data": "^11.5.2",
+    "@grafana/runtime": "^11.5.2",
+    "@grafana/scenes": "^6.5.3",
     "@grafana/schema": "^11.3.2",
-    "@grafana/ui": "^11.3.2",
+    "@grafana/ui": "^11.5.2",
     "axios": "^1.7.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "^6.22.0",
     "react-markdown": "^9.0.3",
+    "react-router-dom": "^6.22.0",
     "rxjs": "7.8.1"
   },
   "packageManager": "npm@10.8.1"
