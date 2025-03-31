@@ -198,14 +198,14 @@ ${columns}`
             content: `For Redshift queries: Add predicates to filter tables that participate in joins, even if the predicates apply the same filters. The query returns the same result set, but Amazon Redshift is able to filter the join tables before the scan step and can then efficiently skip scanning blocks from those tables. Redundant filters aren't needed if you filter on a column that's used in the join condition.`
         },{
             role: "developer",
-            content: `When the query is including a timestamp expose the timestamp in the query result with the "time".`
+            content: `When the query result is including a date column apply the alias "time", make sure to group by the date column and order the date column ascending.`
         },{
             role: "developer",
             content: schema_content,
         },
         {
             role: "user",
-            content: `Here are the table models: ${table_content}\n\nHow can I query the model with Redshift to answer the question: "${question}"? Include the query parameters in the result. Please name the timestamp column "time" and always order ascending if the answer to the question is a timeseries.`,
+            content: `Here are the table models: ${table_content}\n\nHow can I query the model with Redshift to answer the question: "${question}"? Include the query parameters in the result.`,
         }, ...context.context],
         temperature: 0.7
     }

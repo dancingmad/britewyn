@@ -185,7 +185,7 @@ const panel = (type: keyof typeof PanelBuilders, options: PanelOptions = {}) => 
 
 export function getScene(type: keyof typeof PanelBuilders, options: PanelOptions, sql: string, datasource: string) {
     return new EmbeddedScene({
-        $data: queryRunner(sql, datasource, sql.indexOf("time") > -1 ? "time_series" : "table"),
+        $data: queryRunner(sql, datasource, sql.indexOf("time") > -1 && type !== "table" ? "time_series" : "table"),
         $timeRange: new SceneTimeRange({ from: 'now-24h', to: 'now'}),
         controls: [new SceneTimePicker({})],
         body: new SceneFlexLayout({
